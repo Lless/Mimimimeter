@@ -9,7 +9,7 @@
     <h1>Mимимиметр</h1>
     <div>Кто из них мимимишнее? Кликни по фотографии!</div>
     <br>
-    <img src="img/1.jpg" alt="cat is fine too"/>
-    <p th:text="'Выбора нет, лучший - ' + ${catName} + '!'" />
+    <img th:src="'img/' + ${cat.imageName}" alt="cat is fine too"/>
+    <p th:text="'Выбора нет, лучший - ' + ${cat.name} + '!'" />
 </body>
 </html>

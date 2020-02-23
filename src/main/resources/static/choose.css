@@ -3,9 +3,11 @@ body{
     text-align: center;
 }
 .block {
-    width: 300px;
-    text-align: center;
     margin-right: 50px;
+}
+img {
+    max-width: 400px;
+    height: auto;
 }
 .wrap {
     display: flex;

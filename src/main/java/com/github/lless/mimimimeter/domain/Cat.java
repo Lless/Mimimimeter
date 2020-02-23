@@ -34,4 +34,12 @@ public class Cat {
     public void setImageName(String imageName) {
         this.imageName = imageName;
     }
+
+    public Cat(String name, String imageName) {
+        this.name = name;
+        this.imageName = imageName;
+    }
+
+    public Cat() {
+    }
 }

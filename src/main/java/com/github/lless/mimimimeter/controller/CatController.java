@@ -13,7 +13,7 @@ public class CatController {
 
     @GetMapping("/choose")
     public String choose(Model model) {
-        model.addAttribute("cat", catService.getCat());
+        model.addAttribute("cats", catService.getCats());
         return "choose";
     }
 }

@@ -10,7 +10,7 @@ public class CatService {
     @Autowired
     private CatRepo catRepo;
 
-    public Cat getCat() {
-        return catRepo.getOne(1L);
+    public Iterable<Cat> getCats() {
+        return catRepo.findAll();
     }
 }

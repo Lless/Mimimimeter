@@ -7,7 +7,12 @@ body{
 }
 img {
     max-width: 400px;
+    max-height: 300px;
     height: auto;
+    cursor: pointer;
+}
+a {
+    cursor: pointer
 }
 .wrap {
     display: flex;

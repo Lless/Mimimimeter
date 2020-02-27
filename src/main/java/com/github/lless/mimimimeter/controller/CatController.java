@@ -11,9 +11,9 @@ public class CatController {
     @Autowired
     CatService catService;
 
-    @GetMapping("/choose")
+    @GetMapping("/vote")
     public String choose(Model model) {
         model.addAttribute("cats", catService.getCats());
-        return "choose";
+        return "vote";
     }
 }

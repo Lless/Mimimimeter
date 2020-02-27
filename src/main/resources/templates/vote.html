@@ -3,7 +3,7 @@
 <head>
     <title>Mimimimeter</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link rel="stylesheet" href="/static/choose.css">
+    <link rel="stylesheet" href="/static/vote.css">
 </head>
 <body>
     <h1>Mимимиметр</h1>
@@ -13,7 +13,7 @@
         <div th:each="cat: ${cats}" class="block">
             <img th:src="'img/' + ${cat.imageName}" alt="cat is fine too"/>
             <br>
-            <a th:text="${cat.name}" href="#" />
+            <a th:text="${cat.name}" href="" />
         </div>
     </div>
 </body>

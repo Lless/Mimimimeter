@@ -4,6 +4,7 @@
     <title>Mimimimeter</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="/static/vote.css">
+    <script src="vote.js"></script>
 </head>
 <body>
     <h1>Mимимиметр</h1>
@@ -11,9 +12,9 @@
     <br>
     <div class="wrap">
         <div th:each="cat: ${cats}" class="block">
-            <img th:src="'img/' + ${cat.imageName}" alt="cat is fine too"/>
+            <img th:src="'img/' + ${cat.imageName}" th:onclick="'send(' + ${cat.id} +')'"/>
             <br>
-            <a th:text="${cat.name}" href="" />
+            <a th:text="${cat.name}" th:onclick="'send(' + ${cat.id} +')'" href=""/>
         </div>
     </div>
 </body>

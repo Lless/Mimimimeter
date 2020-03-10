@@ -13,7 +13,8 @@ public class CatService {
     private CatRepo catRepo;
 
     public List<Cat> getCats(List<Long> exceptCats) {
-        return catRepo.findAll();
+        if (exceptCats.isEmpty()) return catRepo.getRandomCats();
+        else return catRepo.getRandomCats(exceptCats);
     }
 
     public List<Cat> getCatsFromIds(List<Long> ids) { return catRepo.findAllById(ids); }

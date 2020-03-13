@@ -10,6 +10,16 @@ public class Cat {
     private Long id;
     private String name;
     private String imageName;
+    private Long votes;
+
+    public Cat(String name, String imageName) {
+        this.name = name;
+        this.imageName = imageName;
+        votes = 0L;
+    }
+
+    public Cat() {
+    }
 
     public Long getId() {
         return id;
@@ -35,11 +45,15 @@ public class Cat {
         this.imageName = imageName;
     }
 
-    public Cat(String name, String imageName) {
-        this.name = name;
-        this.imageName = imageName;
+    public Long getVotes() {
+        return votes;
     }
 
-    public Cat() {
+    public void setVotes(Long votes) {
+        this.votes = votes;
+    }
+
+    public void vote() {
+        votes += 1;
     }
 }

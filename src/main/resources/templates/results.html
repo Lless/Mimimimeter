@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Mimimimeter</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="/static/results.css">
+</head>
+<body>
+<table>
+    <tr>
+        <th></th>
+        <th>
+            <h1>Mимимиметр</h1>
+            <div>Топ 10</div>
+        </th>
+        <th></th>
+    </tr>
+    <tr th:each="cat: ${winners}">
+        <td th:text="${catStat.count}" class="inline"/>
+        <td class="center">
+            <img th:src="'img/' + ${cat.imageName}" class="inline"/>
+        </td>
+        <td th:text="${cat.name}" class="inline"/>
+    </tr>
+</table>
+</body>
+</html>

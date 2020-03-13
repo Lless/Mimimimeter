@@ -13,4 +13,7 @@ public interface CatRepo extends JpaRepository<Cat, Long> {
 
     @Query(nativeQuery = true, value = "SELECT * FROM cat order by rand() limit 2")
     List<Cat> getRandomCats();
+
+    @Query(nativeQuery = true, value = "SELECT * FROM cat order by votes DESC limit :count")
+    List<Cat> getTopCats(int count);
 }

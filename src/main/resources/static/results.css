@@ -1,0 +1,19 @@
+body{
+    font-family: cursive;
+}
+
+img {
+    width: auto;
+    height: 100px;
+}
+
+th {
+    font-weight:normal
+}
+
+td {
+    vertical-align: middle;
+}
+.center {
+    text-align: center;
+}

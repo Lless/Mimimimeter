@@ -18,4 +18,13 @@ public class CatService {
     }
 
     public List<Cat> getCatsFromIds(List<Long> ids) { return catRepo.findAllById(ids); }
+
+    public List<Cat> getTop(int count) {
+        return catRepo.getTopCats(10);
+    }
+
+    public void vote(Cat cat) {
+        cat.vote();
+        catRepo.saveAndFlush(cat);
+    }
 }

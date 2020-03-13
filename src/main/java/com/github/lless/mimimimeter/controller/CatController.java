@@ -37,6 +37,7 @@ public class CatController {
         } else {
             cats = catService.getCatsFromIds(catsIds);
         }
+        if (cats.size() < 2) return "redirect:/results";
         model.addAttribute("cats", cats);
         return "vote";
     }
@@ -48,8 +49,15 @@ public class CatController {
                        HttpServletResponse response
     ){
         votedCatsIds.addAll(catsIds);
+        catService.vote(cat);
         response.addCookie(new Cookie("voted", converter.convert(votedCatsIds)));
         response.addCookie(new Cookie("tochoose", ""));
         return "redirect:/vote";
+    }
+
+    @GetMapping("results")
+    public String results(Model model) {
+        model.addAttribute("winners", catService.getTop(10));
+        return "results";
     }
 }

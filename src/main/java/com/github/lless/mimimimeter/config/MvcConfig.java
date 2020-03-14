@@ -10,8 +10,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 public class MvcConfig  implements WebMvcConfigurer {
-    @Value("${img.folder}")
-    private String imgFolder;
+    @Value("${img.location}")
+    private String imgLocation;
 
     @Autowired
     CookieConverter cookieConverter;
@@ -19,7 +19,7 @@ public class MvcConfig  implements WebMvcConfigurer {
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/img/**")
-                .addResourceLocations("file:/" + imgFolder + "/");
+                .addResourceLocations(imgLocation);
         registry.addResourceHandler("/static/**")
                 .addResourceLocations("classpath:/static/");
     }
